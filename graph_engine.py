@@ -79,7 +79,7 @@ def summarize_node(state: AgentState) -> dict:
     ## Core Argument
     Describe the primary thesis or the "why" behind this episode.
 
-    ## Top 3 Takeaways
+    ## Top 5 Takeaways
     The most important lessons or "lightbulb moments" from the conversation.
 
     ## Books & Resources
@@ -174,7 +174,9 @@ def agent_chat_node(state: AgentState) -> Command[Literal["agent_chat_node", "__
 
 # Graph setup
 import sqlite3
-conn = sqlite3.connect("checkpoints.db", check_same_thread=False)
+DB_DIR = os.path.dirname(os.path.abspath(__file__))
+CHECKPOINTS_PATH = os.path.join(DB_DIR, "checkpoints.db")
+conn = sqlite3.connect(CHECKPOINTS_PATH, check_same_thread=False)
 memory = SqliteSaver(conn)
 
 builder = StateGraph(AgentState)
