@@ -3,6 +3,7 @@ import datetime
 from dotenv import load_dotenv
 from graph_engine import graph
 import gpodder_utils
+from langsmith import traceable
 
 load_dotenv()
 
@@ -13,6 +14,7 @@ def get_current_month_range():
     start_of_month = datetime.datetime(now.year, now.month, 1)
     return int(start_of_month.timestamp())
 
+@traceable(name="Batch Process Latest Episodes")
 def process_latest_episodes():
     # 0. Fetch new episodes manually since gpo CLI is broken
     print("Fetching new episodes for all podcasts...")

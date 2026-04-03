@@ -3,9 +3,11 @@ import requests
 from google import genai
 from google.genai import types
 import time
+from langsmith import traceable
 
 DOWNLOADS_DIR = "/home/aswinmanohar/poddersum/downloads"
 
+@traceable(name="Download Podcast File")
 def download_file(url, podcast_title, episode_title):
     if not os.path.exists(DOWNLOADS_DIR):
         os.makedirs(DOWNLOADS_DIR)
@@ -29,6 +31,7 @@ def download_file(url, podcast_title, episode_title):
     
     return filepath
 
+@traceable(name="Upload to Gemini File API")
 def upload_to_gemini(client, file_path):
     print(f"Uploading {file_path} to Gemini...")
     file_upload = client.files.upload(file=file_path)

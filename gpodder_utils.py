@@ -2,9 +2,11 @@ import os
 import sqlite3
 import datetime
 import feedparser
+from langsmith import traceable
 
 DB_PATH = "/home/aswinmanohar/gPodder/Database"
 
+@traceable(name="Subscribe to Podcast Feed")
 def subscribe_to_podcast(feed_url):
     """Manually insert a new podcast subscription into the gPodder database."""
     # 1. Parse feed for metadata
@@ -47,6 +49,7 @@ def subscribe_to_podcast(feed_url):
             conn.close()
         return False, f"Database error: {str(e)}"
 
+@traceable(name="Fetch New Episodes")
 def fetch_episodes(podcast_url=None):
     """Fetch new episodes for one or all podcasts and add them to the database."""
     conn = sqlite3.connect(DB_PATH)

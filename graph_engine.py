@@ -93,7 +93,7 @@ def summarize_node(state: AgentState) -> dict:
     """
 
     response = client.models.generate_content(
-        model="gemini-2.0-flash",
+        model="gemini-3-flash-preview",
         contents=[
             types.Content(
                 role="user",
@@ -138,7 +138,7 @@ def agent_chat_node(state: AgentState) -> Command[Literal["agent_chat_node", "__
         """
         
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-3-flash-preview",
             contents=[
                 types.Content(
                     role="user",
