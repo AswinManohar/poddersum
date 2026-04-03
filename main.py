@@ -14,6 +14,10 @@ def get_current_month_range():
     return int(start_of_month.timestamp())
 
 def process_latest_episodes():
+    # 0. Fetch new episodes manually since gpo CLI is broken
+    print("Fetching new episodes for all podcasts...")
+    gpodder_utils.fetch_episodes()
+    
     start_ts = get_current_month_range()
     
     # We want the latest episode for EACH podcast that was published THIS month and is unplayed

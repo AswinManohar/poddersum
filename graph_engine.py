@@ -1,5 +1,5 @@
 import os
-from typing import Annotated, TypedDict, Literal
+from typing import Annotated, TypedDict, Literal, Optional
 import operator
 from dotenv import load_dotenv
 from langgraph.graph import StateGraph, START, END
@@ -7,6 +7,7 @@ from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.types import interrupt, Command
 from google import genai
 from google.genai import types
+from langsmith import traceable
 
 import gpodder_utils
 import gemini_utils
@@ -14,6 +15,11 @@ import gemini_utils
 load_dotenv()
 
 # State definition
+class UsageMetadata(TypedDict):
+    prompt_token_count: int
+    candidates_token_count: int
+    total_token_count: int
+
 class AgentState(TypedDict):
     episode_id: int
     podcast_title: str
@@ -24,8 +30,10 @@ class AgentState(TypedDict):
     summary: str
     messages: Annotated[list, operator.add]
     status: str
+    usage: Annotated[list[UsageMetadata], operator.add]
 
 # Nodes
+@traceable(name="Download Episode")
 def download_node(state: AgentState) -> dict:
     if state.get("audio_path") and os.path.exists(state["audio_path"]):
         return {"status": "Downloaded"}
@@ -42,6 +50,7 @@ def download_node(state: AgentState) -> dict:
         "status": "Downloaded"
     }
 
+@traceable(name="Summarize Episode")
 def summarize_node(state: AgentState) -> dict:
     if state.get("summary"):
         return {"status": "Summarized"}
@@ -96,12 +105,20 @@ def summarize_node(state: AgentState) -> dict:
         ]
     )
 
+    usage = {
+        "prompt_token_count": response.usage_metadata.prompt_token_count,
+        "candidates_token_count": response.usage_metadata.candidates_token_count,
+        "total_token_count": response.usage_metadata.total_token_count
+    }
+
     return {
         "summary": response.text,
         "gemini_file_uri": gemini_file_uri,
-        "status": "Summarized"
+        "status": "Summarized",
+        "usage": [usage]
     }
 
+@traceable(name="Agent Chat Node")
 def agent_chat_node(state: AgentState) -> Command[Literal["agent_chat_node", "__end__"]]:
     """Interactive node for user to ask questions about the podcast."""
     
@@ -132,9 +149,18 @@ def agent_chat_node(state: AgentState) -> Command[Literal["agent_chat_node", "__
                 )
             ]
         )
+
+        usage = {
+            "prompt_token_count": response.usage_metadata.prompt_token_count,
+            "candidates_token_count": response.usage_metadata.candidates_token_count,
+            "total_token_count": response.usage_metadata.total_token_count
+        }
         
         return Command(
-            update={"messages": [{"role": "assistant", "content": response.text}]},
+            update={
+                "messages": [{"role": "assistant", "content": response.text}],
+                "usage": [usage]
+            },
             goto="agent_chat_node" # Stay in chat loop
         )
     

@@ -20,7 +20,53 @@ with st.sidebar:
         os.environ["GEMINI_API_KEY"] = api_key
     
     st.divider()
+    
+    # Usage & Cost Transparency
+    if "selected_episode" in st.session_state and "thread_id" in st.session_state:
+        config = {"configurable": {"thread_id": st.session_state.thread_id}}
+        current_state = graph.get_state(config)
+        if current_state.values and "usage" in current_state.values:
+            usage_list = current_state.values["usage"]
+            total_prompt = sum(u["prompt_token_count"] for u in usage_list)
+            total_candidates = sum(u["candidates_token_count"] for u in usage_list)
+            total_tokens = sum(u["total_token_count"] for u in usage_list)
+            
+            # Gemini 2.0 Flash Estimated Pricing
+            # Input: $0.10 / 1M tokens, Output: $0.40 / 1M tokens
+            cost = (total_prompt * 0.10 / 1_000_000) + (total_candidates * 0.40 / 1_000_000)
+            
+            st.header("📊 Usage & Cost")
+            st.write(f"**Total Tokens:** {total_tokens:,}")
+            st.write(f"- Prompt: {total_prompt:,}")
+            st.write(f"- Response: {total_candidates:,}")
+            st.write(f"**Est. Cost:** ${cost:.6f}")
+            st.caption("Pricing: $0.10/1M input, $0.40/1M output")
+            st.divider()
+
     st.write("Browse your gPodder subscriptions and summarize the latest episodes.")
+    
+    st.divider()
+    st.header("➕ Subscribe")
+    new_url = st.text_input("Podcast RSS URL")
+    if st.button("Subscribe"):
+        if new_url:
+            with st.spinner("Subscribing..."):
+                success, msg = gpodder_utils.subscribe_to_podcast(new_url)
+                if success:
+                    st.success(msg)
+                    # Automatically fetch episodes for the new podcast
+                    gpodder_utils.fetch_episodes(new_url)
+                    st.session_state.episodes = gpodder_utils.get_latest_episodes(limit=30)
+                else:
+                    st.error(msg)
+    
+    st.divider()
+    if st.button("🔄 Refresh All Feeds"):
+        with st.spinner("Fetching new episodes..."):
+            count = gpodder_utils.fetch_episodes()
+            st.success(f"Fetched {count} new episodes!")
+            st.session_state.episodes = gpodder_utils.get_latest_episodes(limit=30)
+            st.rerun()
 
 # State initialization
 if "episodes" not in st.session_state:
