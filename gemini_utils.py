@@ -31,7 +31,7 @@ def download_file(url, podcast_title, episode_title):
 
 def upload_to_gemini(client, file_path):
     print(f"Uploading {file_path} to Gemini...")
-    file_upload = client.files.upload(path=file_path)
+    file_upload = client.files.upload(file=file_path)
     
     while file_upload.state.name == "PROCESSING":
         time.sleep(5)
