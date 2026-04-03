@@ -12,6 +12,42 @@ st.set_page_config(page_title="Podcast Summarizer Agent", layout="wide")
 
 st.title("🎙️ Podcast Summarizer Agent")
 
+# Global Cost Calculation
+def get_global_usage():
+    import sqlite3
+    conn = sqlite3.connect("checkpoints.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT DISTINCT thread_id FROM checkpoints")
+    threads = cursor.fetchall()
+    
+    total_prompt = 0
+    total_candidates = 0
+    
+    for (thread_id,) in threads:
+        config = {"configurable": {"thread_id": thread_id}}
+        state = graph.get_state(config)
+        if state.values and "usage" in state.values:
+            usage_list = state.values["usage"]
+            total_prompt += sum(u["prompt_token_count"] for u in usage_list)
+            total_candidates += sum(u["candidates_token_count"] for u in usage_list)
+    
+    conn.close()
+    return total_prompt, total_candidates
+
+# Display Global Metrics
+try:
+    g_prompt, g_candidates = get_global_usage()
+    g_total_tokens = g_prompt + g_candidates
+    g_cost = (g_prompt * 0.10 / 1_000_000) + (g_candidates * 0.40 / 1_000_000)
+    
+    m_col1, m_col2, m_col3 = st.columns(3)
+    m_col1.metric("Total Tokens Processed", f"{g_total_tokens:,}")
+    m_col2.metric("Total Estimated Cost", f"${g_cost:.4f}")
+    m_col3.metric("Episodes Summarized", len(set([f for f in os.listdir("summaries") if f.endswith(".md")])) if os.path.exists("summaries") else 0)
+    st.divider()
+except Exception:
+    pass # Database might not exist yet
+
 # Sidebar: Configuration
 with st.sidebar:
     st.header("Settings")
