@@ -95,7 +95,7 @@ def summarize_node(state: AgentState) -> dict:
     """
 
     response = client.models.generate_content(
-        model="gemini-3-flash-preview",
+        model="gemini-2.0-flash",
         contents=[
             types.Content(
                 role="user",
@@ -135,13 +135,20 @@ def transcribe_node(state: AgentState) -> dict:
     
     prompt = f"""
     You are an expert transcriber. Please provide a full, verbatim transcript of the following podcast episode.
-    Include speaker labels if possible, and maintain original formatting of the conversation.
+    
+    CRITICAL: You must distinguish between different speakers. Listen carefully to the introductions at the 
+    beginning of the audio to identify the names of the host and guest(s). 
+    Use their actual names for speaker labels (e.g., "Dan Harris:", "Bart van Melik:") instead of generic labels 
+    like "Speaker 1:". If a name is unknown, use a descriptive label until the name is revealed.
+    
     Podcast: {state['podcast_title']}
     Episode: {state['episode_title']}
+    
+    Maintain the original formatting and flow of the conversation.
     """
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash-lite-preview-09-2025",
+        model="gemini-2.0-flash",
         contents=[
             types.Content(
                 role="user",
@@ -185,7 +192,7 @@ def agent_chat_node(state: AgentState) -> Command[Literal["agent_chat_node", "__
         """
         
         response = client.models.generate_content(
-            model="gemini-3-flash-preview",
+            model="gemini-2.0-flash",
             contents=[
                 types.Content(
                     role="user",
