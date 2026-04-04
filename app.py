@@ -8,6 +8,9 @@ import uuid
 
 load_dotenv()
 
+SUMMARIES_DIR = "/home/aswinmanohar/poddersum/summaries"
+TRANSCRIPTIONS_DIR = "/home/aswinmanohar/poddersum/transcriptions"
+
 st.set_page_config(page_title="Podcast Summarizer Agent", layout="wide")
 
 st.title("🎙️ Podcast Summarizer Agent")
@@ -43,7 +46,7 @@ try:
     m_col1, m_col2, m_col3 = st.columns(3)
     m_col1.metric("Total Tokens Processed", f"{g_total_tokens:,}")
     m_col2.metric("Total Estimated Cost", f"${g_cost:.4f}")
-    m_col3.metric("Episodes Summarized", len(set([f for f in os.listdir("summaries") if f.endswith(".md")])) if os.path.exists("summaries") else 0)
+    m_col3.metric("Episodes Summarized", len(set([f for f in os.listdir(SUMMARIES_DIR) if f.endswith(".md")])) if os.path.exists(SUMMARIES_DIR) else 0)
     st.divider()
 except Exception:
     pass # Database might not exist yet
@@ -141,14 +144,50 @@ if "selected_episode" in st.session_state:
     current_state = graph.get_state(config)
     
     if not current_state.values:
-        # Initial run
-        with st.spinner("Downloading, Summarizing, and Transcribing..."):
-            res = graph.invoke({
+        # Initial run with progress status
+        with st.status("Processing Podcast...", expanded=True) as status:
+            st.write("📥 Downloading episode...")
+            for step in graph.stream({
                 "episode_id": ep["id"], 
                 "messages": [],
                 "should_transcribe": should_transcribe
-            }, config)
+            }, config, stream_mode="updates"):
+                if "download" in step:
+                    st.write("✅ Download complete.")
+                    st.write("🧠 Summarizing audio...")
+                elif "summarize" in step:
+                    st.write("✅ Summarization complete.")
+                    if should_transcribe:
+                        st.write("✍️ Transcribing audio...")
+                    else:
+                        st.write("⏭️ Skipping transcription.")
+                elif "transcribe" in step:
+                    st.write("✅ Transcription complete.")
+            
+            status.update(label="✅ Processing complete!", state="complete", expanded=False)
+            
+            # Refresh state after stream
             current_state = graph.get_state(config)
+            
+            # Save to disk (mirroring main.py logic)
+            summary = current_state.values.get("summary")
+            transcription = current_state.values.get("transcription")
+            p_title = current_state.values.get("podcast_title", ep["p_title"])
+            e_title = current_state.values.get("episode_title", ep["e_title"])
+            
+            if summary:
+                if not os.path.exists(SUMMARIES_DIR):
+                    os.makedirs(SUMMARIES_DIR)
+                filename = f"{p_title}_{e_title}".replace("/", "_").replace(" ", "_")[:100] + ".md"
+                with open(os.path.join(SUMMARIES_DIR, filename), "w") as f:
+                    f.write(summary)
+            
+            if transcription:
+                if not os.path.exists(TRANSCRIPTIONS_DIR):
+                    os.makedirs(TRANSCRIPTIONS_DIR)
+                filename = f"{p_title}_{e_title}_transcript".replace("/", "_").replace(" ", "_")[:100] + ".md"
+                with open(os.path.join(TRANSCRIPTIONS_DIR, filename), "w") as f:
+                    f.write(transcription)
 
     # Display Content in Tabs
     summary = current_state.values.get("summary")
