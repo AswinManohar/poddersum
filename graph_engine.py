@@ -28,6 +28,8 @@ class AgentState(TypedDict):
     audio_path: str
     gemini_file_uri: str
     summary: str
+    transcription: str
+    should_transcribe: bool
     messages: Annotated[list, operator.add]
     status: str
     usage: Annotated[list[UsageMetadata], operator.add]
@@ -118,6 +120,51 @@ def summarize_node(state: AgentState) -> dict:
         "usage": [usage]
     }
 
+@traceable(name="Transcribe Episode")
+def transcribe_node(state: AgentState) -> dict:
+    if not state.get("should_transcribe"):
+        return {"status": "Skipped Transcription"}
+    
+    if state.get("transcription"):
+        return {"status": "Already Transcribed"}
+    
+    api_key = os.environ.get("GEMINI_API_KEY")
+    client = genai.Client(api_key=api_key)
+    
+    gemini_file_uri = state.get("gemini_file_uri")
+    
+    prompt = f"""
+    You are an expert transcriber. Please provide a full, verbatim transcript of the following podcast episode.
+    Include speaker labels if possible, and maintain original formatting of the conversation.
+    Podcast: {state['podcast_title']}
+    Episode: {state['episode_title']}
+    """
+
+    response = client.models.generate_content(
+        model="gemini-3-flash-preview",
+        contents=[
+            types.Content(
+                role="user",
+                parts=[
+                    types.Part.from_uri(file_uri=gemini_file_uri, mime_type="audio/mpeg"),
+                    types.Part.from_text(text=prompt)
+                ]
+            )
+        ]
+    )
+
+    usage = {
+        "prompt_token_count": response.usage_metadata.prompt_token_count,
+        "candidates_token_count": response.usage_metadata.candidates_token_count,
+        "total_token_count": response.usage_metadata.total_token_count
+    }
+
+    return {
+        "transcription": response.text,
+        "status": "Transcribed",
+        "usage": [usage]
+    }
+
 @traceable(name="Agent Chat Node")
 def agent_chat_node(state: AgentState) -> Command[Literal["agent_chat_node", "__end__"]]:
     """Interactive node for user to ask questions about the podcast."""
@@ -182,11 +229,13 @@ memory = SqliteSaver(conn)
 builder = StateGraph(AgentState)
 builder.add_node("download", download_node)
 builder.add_node("summarize", summarize_node)
+builder.add_node("transcribe", transcribe_node)
 builder.add_node("agent_chat_node", agent_chat_node)
 
 builder.add_edge(START, "download")
 builder.add_edge("download", "summarize")
-builder.add_edge("summarize", "agent_chat_node")
+builder.add_edge("summarize", "transcribe")
+builder.add_edge("transcribe", "agent_chat_node")
 
 graph = builder.compile(checkpointer=memory)
 
