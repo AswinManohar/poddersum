@@ -1,12 +1,13 @@
 # Podcast Summarizer Agentic System
 
-This project is a podcast summarizer that uses **LangGraph** for an agentic workflow and **Gemini 3.0 Flash** for native audio summarization.
+poddersum is an agentic podcast summarizer build with **LangGraph** for an agentic workflow and **Gemini models** for native audio summarization.
 
 ## Features
 - **Agentic Workflow:** Uses LangGraph to manage the download, summarization, and interactive chat phases.
 - **Persistent Memory:** Uses `SqliteSaver` to remember conversation history and summary state across sessions.
 - **Interactive Front-end:** A Streamlit app to browse podcasts, generate summaries, and chat with the agent.
 - **Scheduled Summarization:** A `main.py` script for daily cron jobs to fetch the latest episodes in the current month.
+- Added new transcription option
 
 ## Summarized Podcasts
 - 10% Happier with Dan Harris
