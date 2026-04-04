@@ -1,4 +1,4 @@
-# Podcast Summarizer Agentic System
+# Podcast summarizer agentic system
 
 poddersum is an agentic podcast summarizer build with **LangGraph** for an agentic workflow and **Gemini models** for native audio summarization.
 
