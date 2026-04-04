@@ -82,6 +82,10 @@ with st.sidebar:
     st.write("Browse your gPodder subscriptions and summarize the latest episodes.")
     
     st.divider()
+    st.header("⚙️ Processing Options")
+    should_transcribe = st.checkbox("Include Full Transcription", value=False, help="Transcribing the full audio will use more tokens.")
+    
+    st.divider()
     st.header("➕ Subscribe")
     new_url = st.text_input("Podcast RSS URL")
     if st.button("Subscribe"):
@@ -138,13 +142,40 @@ if "selected_episode" in st.session_state:
     
     if not current_state.values:
         # Initial run
-        with st.spinner("Downloading and Summarizing..."):
-            res = graph.invoke({"episode_id": ep["id"], "messages": []}, config)
+        with st.spinner("Downloading, Summarizing, and Transcribing..."):
+            res = graph.invoke({
+                "episode_id": ep["id"], 
+                "messages": [],
+                "should_transcribe": should_transcribe
+            }, config)
             current_state = graph.get_state(config)
 
-    # Display Summary
-    if current_state.values.get("summary"):
-        st.markdown(current_state.values["summary"])
+    # Display Content in Tabs
+    summary = current_state.values.get("summary")
+    transcription = current_state.values.get("transcription")
+    
+    if summary or transcription:
+        tab1, tab2 = st.tabs(["📝 Summary", "📜 Full Transcription"])
+        
+        with tab1:
+            if summary:
+                st.markdown(summary)
+            else:
+                st.info("No summary available.")
+                
+        with tab2:
+            if transcription:
+                st.download_button(
+                    label="Download Transcription (.md)",
+                    data=transcription,
+                    file_name=f"{ep['e_title']}_transcript.md",
+                    mime="text/markdown"
+                )
+                st.markdown(transcription)
+            elif should_transcribe:
+                st.info("Transcription requested but not yet available.")
+            else:
+                st.info("Transcription not requested for this episode.")
     
     # Chat Interface
     st.divider()
