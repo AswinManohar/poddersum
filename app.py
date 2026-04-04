@@ -13,7 +13,7 @@ TRANSCRIPTIONS_DIR = "/home/aswinmanohar/poddersum/transcriptions"
 
 st.set_page_config(page_title="Podcast Summarizer Agent", layout="wide")
 
-st.title("🎙️ Podcast Summarizer Agent")
+st.title("Podcast Summarizer Agent")
 
 # Global Cost Calculation
 def get_global_usage():
@@ -74,7 +74,7 @@ with st.sidebar:
             # Input: $0.10 / 1M tokens, Output: $0.40 / 1M tokens
             cost = (total_prompt * 0.10 / 1_000_000) + (total_candidates * 0.40 / 1_000_000)
             
-            st.header("📊 Usage & Cost")
+            st.header("Usage and Cost")
             st.write(f"**Total Tokens:** {total_tokens:,}")
             st.write(f"- Prompt: {total_prompt:,}")
             st.write(f"- Response: {total_candidates:,}")
@@ -85,11 +85,11 @@ with st.sidebar:
     st.write("Browse your gPodder subscriptions and summarize the latest episodes.")
     
     st.divider()
-    st.header("⚙️ Processing Options")
+    st.header("Processing Options")
     should_transcribe = st.checkbox("Include Full Transcription", value=False, help="Transcribing the full audio will use more tokens.")
     
     st.divider()
-    st.header("➕ Subscribe")
+    st.header("Subscribe")
     new_url = st.text_input("Podcast RSS URL")
     if st.button("Subscribe"):
         if new_url:
@@ -104,7 +104,7 @@ with st.sidebar:
                     st.error(msg)
     
     st.divider()
-    if st.button("🔄 Refresh All Feeds"):
+    if st.button("Refresh All Feeds"):
         with st.spinner("Fetching new episodes..."):
             count = gpodder_utils.fetch_episodes()
             st.success(f"Fetched {count} new episodes!")
@@ -146,25 +146,25 @@ if "selected_episode" in st.session_state:
     if not current_state.values:
         # Initial run with progress status
         with st.status("Processing Podcast...", expanded=True) as status:
-            st.write("📥 Downloading episode...")
+            st.write("Downloading episode...")
             for step in graph.stream({
                 "episode_id": ep["id"], 
                 "messages": [],
                 "should_transcribe": should_transcribe
             }, config, stream_mode="updates"):
                 if "download" in step:
-                    st.write("✅ Download complete.")
-                    st.write("🧠 Summarizing audio...")
+                    st.write("Download complete.")
+                    st.write("Summarizing audio...")
                 elif "summarize" in step:
-                    st.write("✅ Summarization complete.")
+                    st.write("Summarization complete.")
                     if should_transcribe:
-                        st.write("✍️ Transcribing audio...")
+                        st.write("Transcribing audio...")
                     else:
-                        st.write("⏭️ Skipping transcription.")
+                        st.write("Skipping transcription.")
                 elif "transcribe" in step:
-                    st.write("✅ Transcription complete.")
+                    st.write("Transcription complete.")
             
-            status.update(label="✅ Processing complete!", state="complete", expanded=False)
+            status.update(label="Processing complete!", state="complete", expanded=False)
             
             # Refresh state after stream
             current_state = graph.get_state(config)
@@ -194,7 +194,7 @@ if "selected_episode" in st.session_state:
     transcription = current_state.values.get("transcription")
     
     if summary or transcription:
-        tab1, tab2 = st.tabs(["📝 Summary", "📜 Full Transcription"])
+        tab1, tab2 = st.tabs(["Summary", "Full Transcription"])
         
         with tab1:
             if summary:
