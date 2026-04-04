@@ -7,8 +7,10 @@ from langsmith import traceable
 
 load_dotenv()
 
-SUMMARIES_DIR = "/home/aswinmanohar/poddersum/summaries"
-TRANSCRIPTIONS_DIR = "/home/aswinmanohar/poddersum/transcriptions"
+# Relative paths for portability
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SUMMARIES_DIR = os.path.join(BASE_DIR, "summaries")
+TRANSCRIPTIONS_DIR = os.path.join(BASE_DIR, "transcriptions")
 
 def get_current_month_range():
     now = datetime.datetime.now()

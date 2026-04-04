@@ -4,7 +4,8 @@ import datetime
 import feedparser
 from langsmith import traceable
 
-DB_PATH = "/home/aswinmanohar/gPodder/Database"
+# Dynamic path that works for any user on Linux/Mac
+DB_PATH = os.path.expanduser("~/gPodder/Database")
 
 @traceable(name="Subscribe to Podcast Feed")
 def subscribe_to_podcast(feed_url):
