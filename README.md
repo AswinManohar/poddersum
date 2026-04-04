@@ -4,7 +4,7 @@ poddersum is an agentic podcast summarizer built with **LangGraph** for an agent
 
 ---
 
-# 🎙️ Beginner's Guide (Linux & Mac)
+# beginners guide (Linux & Mac)
 
 Follow these steps to set up your own personal AI podcast assistant.
 
