@@ -1,0 +1,23 @@
+{
+  "query": "hidden brain",
+  "results": [
+    {
+      "id": "ebdb293ea208018fb44fdc0922bf4e61b67a5085c6063d45b4b76a985af77e27",
+      "title": "Hidden Brain",
+      "author": "Hidden Brain Media",
+      "artwork_url": "https://img.example.com/hiddenbrain/600.jpg",
+      "feed_url": "https://feeds.example.com/hiddenbrain",
+      "genre": "Social Sciences",
+      "itunes_id": 1028908750
+    },
+    {
+      "id": "ee7742c7eb23fb5813801e72631008e0b334cfc311a26958a8f370c7ddc98be1",
+      "title": "Hidden Brain Kids",
+      "author": "Fixture Studio",
+      "artwork_url": null,
+      "feed_url": "https://feeds.example.com/hidden-brain-kids",
+      "genre": "Kids & Family",
+      "itunes_id": 1500000001
+    }
+  ]
+}

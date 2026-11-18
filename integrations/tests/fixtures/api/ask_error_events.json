@@ -1,0 +1,14 @@
+[
+  {
+    "event": "status",
+    "message": "Reading the transcript"
+  },
+  {
+    "event": "error",
+    "message": "The transcript does not cover this question.",
+    "code": "no_grounded_claims"
+  },
+  {
+    "event": "done"
+  }
+]

@@ -1,0 +1,43 @@
+[project]
+name = "poddersum-integrations"
+version = "0.1.0"
+description = "Test harness for the PodderSum MCP server, Agent Skills and host bundles."
+requires-python = ">=3.12"
+dependencies = ["poddersum-mcp"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "ruff>=0.6", "starlette", "uvicorn", "pyyaml", "pydantic>=2"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+poddersum-mcp = { path = "mcp", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+addopts = "-m 'not live and not agents'"
+markers = [
+    "live: hits the real PodderSum API at PODDERSUM_API_URL (default http://localhost:8010); skipped if it is down. Run with -m live.",
+    "agents: headless agent runs (Claude Code, Hermes, OpenClaw) that spend model quota. Run with -m agents.",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+extend-exclude = ["dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "ASYNC", "SIM"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["poddersum_mcp"]
+known-third-party = ["mcp", "mcp_types"]
+
+[tool.ruff.lint.per-file-ignores]
+# The skill CLI is stdlib-only and kept Python 3.9-compatible; %-formatting is deliberate.
+"skills/**/scripts/*.py" = ["UP031", "SIM905"]

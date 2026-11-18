@@ -1,0 +1,55 @@
+{
+  "episode_id": "ea6b90c9b59a0214fb84f43b17dd1f2c8941029fb9b2d783ed1c9365fafc5ff5",
+  "kind": "verdict",
+  "prompt_version": "presets-v1",
+  "answer": {
+    "claims": [
+      {
+        "text": "Best for listeners rebuilding after a career setback.",
+        "citations": [
+          {
+            "segment_id": 3,
+            "start_ms": 20000,
+            "end_ms": 48000,
+            "speaker": "Shankar Vedantam",
+            "quote": null
+          }
+        ],
+        "section": "who_its_for"
+      },
+      {
+        "text": "New: research on why early small wins matter more than big goals.",
+        "citations": [
+          {
+            "segment_id": 19,
+            "start_ms": 312000,
+            "end_ms": 340000,
+            "speaker": "Shankar Vedantam",
+            "quote": null
+          }
+        ],
+        "section": "whats_new"
+      },
+      {
+        "text": "Minutes 5 to 15 carry the core study and its surprising result.",
+        "citations": [
+          {
+            "segment_id": 18,
+            "start_ms": 300000,
+            "end_ms": 328000,
+            "speaker": "Shankar Vedantam",
+            "quote": null
+          }
+        ],
+        "section": "best_10_minutes"
+      }
+    ],
+    "model": "fixture-model",
+    "prompt_version": "presets-v1",
+    "tokens_in": 9120,
+    "tokens_out": 410,
+    "cost_usd": 0.0,
+    "cached": true
+  },
+  "created_at": "2026-11-18T10:00:00Z"
+}

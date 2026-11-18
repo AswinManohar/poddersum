@@ -1,0 +1,13 @@
+// No API key needed: OpenClaw's own model writes the summary from `poddersum.py transcript`.
+// Merge into ~/.openclaw/openclaw.json (verified with OpenClaw 2026.2.3-1:
+// `openclaw skills list` shows both skills as "ready"; a headless
+// `openclaw agent --local` run used the skill's script end to end).
+// This OpenClaw build has no native MCP client, so the skills use their bundled
+// stdlib script (scripts/poddersum.py) against the PodderSum API.
+{
+  skills: {
+    load: { extraDirs: ["/path/to/poddersum/integrations/dist/skills"] },
+  },
+  // The script reads PODDERSUM_API_URL (default http://localhost:8010) from the environment.
+  env: { PODDERSUM_API_URL: "http://localhost:8010" },
+}

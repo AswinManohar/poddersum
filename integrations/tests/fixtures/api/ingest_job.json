@@ -1,0 +1,12 @@
+{
+  "job_id": "7f1c2b9e-4d4a-4c55-9a51-3b0f1f0c9a10",
+  "episode_id": "ea6b90c9b59a0214fb84f43b17dd1f2c8941029fb9b2d783ed1c9365fafc5ff5",
+  "state": "queued",
+  "step": "queued",
+  "progress": 0.0,
+  "message": "Waiting for a worker",
+  "error": null,
+  "created_at": "2026-11-18T10:00:00Z",
+  "updated_at": "2026-11-18T10:00:00Z",
+  "finished_at": null
+}

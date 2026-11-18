@@ -1,0 +1,52 @@
+[
+  {
+    "event": "status",
+    "message": "Thinking"
+  },
+  {
+    "event": "claim",
+    "index": 0,
+    "claim": {
+      "text": "The second guest is a labor economist who studies career changes.",
+      "citations": [
+        {
+          "segment_id": 30,
+          "start_ms": 1650000,
+          "end_ms": 1678000,
+          "speaker": "Host",
+          "quote": null
+        }
+      ],
+      "section": null
+    }
+  },
+  {
+    "event": "answer",
+    "answer": {
+      "claims": [
+        {
+          "text": "The second guest is a labor economist who studies career changes.",
+          "citations": [
+            {
+              "segment_id": 30,
+              "start_ms": 1650000,
+              "end_ms": 1678000,
+              "speaker": "Host",
+              "quote": null
+            }
+          ],
+          "section": null
+        }
+      ],
+      "model": "fixture-model",
+      "prompt_version": "chat-v1",
+      "tokens_in": 9120,
+      "tokens_out": 410,
+      "cost_usd": 0.0003,
+      "cached": false
+    }
+  },
+  {
+    "event": "done"
+  }
+]

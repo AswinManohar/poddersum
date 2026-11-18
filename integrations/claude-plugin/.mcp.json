@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "poddersum": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--quiet",
+        "--frozen",
+        "--project",
+        "${CLAUDE_PLUGIN_ROOT}/server",
+        "poddersum-mcp"
+      ],
+      "env": {
+        "PODDERSUM_API_URL": "${PODDERSUM_API_URL:-http://localhost:8010}",
+        "PODDERSUM_WAIT_S": "${PODDERSUM_WAIT_S:-240}",
+        "PODDERSUM_ENGINE": "${PODDERSUM_ENGINE:-auto}"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# No API key needed: Grok writes the summary from the transcript when PodderSum has no server model.
+# Grok Build: merge into ~/.grok/config.toml (format from docs.x.ai/build/features/mcp-servers,
+# fetched 2026-11-18; not run locally - the grok CLI is not installed here).
+# Or: grok mcp add poddersum -- uv run --quiet --project /path/to/poddersum/integrations/mcp poddersum-mcp
+[mcp_servers.poddersum]
+command = "uv"
+args = ["run", "--quiet", "--project", "/path/to/poddersum/integrations/mcp", "poddersum-mcp"]
+env = { PODDERSUM_API_URL = "${PODDERSUM_API_URL:-http://localhost:8010}" }
+tool_timeout_sec = 600
+
+# Skills: copy integrations/dist/skills/* to ~/.grok/skills/ (or ~/.agents/skills/), or add
+# [skills] paths = ["/path/to/poddersum/integrations/dist/skills"].
+# Grok also loads Claude Code plugins: --plugin-dir /path/to/poddersum/integrations/dist/claude-plugin

@@ -1,0 +1,13 @@
+# Merge into ~/.hermes/config.yaml (verified with Hermes Agent v0.20.5: `hermes mcp test
+# poddersum` connects and lists 7 tools; `hermes skills list` shows both skills).
+# No API key needed. Replace /path/to/poddersum with your checkout.
+mcp_servers:
+  poddersum:
+    command: "uv"
+    args: ["run", "--quiet", "--project", "/path/to/poddersum/integrations/mcp", "poddersum-mcp"]
+    env:
+      PODDERSUM_API_URL: "http://localhost:8010"
+    timeout: 300            # summarize_episode waits up to PODDERSUM_WAIT_S (240 s) by default
+skills:
+  external_dirs:
+    - /path/to/poddersum/integrations/dist/skills   # run integrations/build.sh first

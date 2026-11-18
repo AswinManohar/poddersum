@@ -1,0 +1,8 @@
+{
+  "name": "poddersum",
+  "version": "0.1.0",
+  "description": "Summarize any public podcast episode with PodderSum: TL;DR, takeaways or a worth-it verdict, from any angle, with every claim linked to a timestamp in the audio. Adds the poddersum MCP server and the poddersum-summarize / poddersum-ask skills.",
+  "author": { "name": "PodderSum" },
+  "homepage": "https://github.com/AswinManohar/poddersum",
+  "keywords": ["podcast", "summary", "transcript", "mcp"]
+}

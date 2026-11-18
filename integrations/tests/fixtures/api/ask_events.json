@@ -1,0 +1,82 @@
+[
+  {
+    "event": "status",
+    "message": "Reading the transcript"
+  },
+  {
+    "event": "claim",
+    "index": 0,
+    "claim": {
+      "text": "For founders, the key lesson is to frame a failed launch as an experiment with results.",
+      "citations": [
+        {
+          "segment_id": 12,
+          "start_ms": 98000,
+          "end_ms": 126000,
+          "speaker": "Shankar Vedantam",
+          "quote": "treat it like a lab result"
+        }
+      ],
+      "section": null
+    }
+  },
+  {
+    "event": "claim",
+    "index": 1,
+    "claim": {
+      "text": "The guest warns that hiding a failure from your team slows recovery.",
+      "citations": [
+        {
+          "segment_id": 27,
+          "start_ms": 1404000,
+          "end_ms": 1432000,
+          "speaker": "Guest researcher",
+          "quote": "secrecy is the expensive part"
+        }
+      ],
+      "section": null
+    }
+  },
+  {
+    "event": "answer",
+    "answer": {
+      "claims": [
+        {
+          "text": "For founders, the key lesson is to frame a failed launch as an experiment with results.",
+          "citations": [
+            {
+              "segment_id": 12,
+              "start_ms": 98000,
+              "end_ms": 126000,
+              "speaker": "Shankar Vedantam",
+              "quote": "treat it like a lab result"
+            }
+          ],
+          "section": null
+        },
+        {
+          "text": "The guest warns that hiding a failure from your team slows recovery.",
+          "citations": [
+            {
+              "segment_id": 27,
+              "start_ms": 1404000,
+              "end_ms": 1432000,
+              "speaker": "Guest researcher",
+              "quote": "secrecy is the expensive part"
+            }
+          ],
+          "section": null
+        }
+      ],
+      "model": "fixture-model",
+      "prompt_version": "answer-v2",
+      "tokens_in": 9120,
+      "tokens_out": 410,
+      "cost_usd": 0.0007,
+      "cached": false
+    }
+  },
+  {
+    "event": "done"
+  }
+]

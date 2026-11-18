@@ -1,0 +1,69 @@
+{
+  "podcast": {
+    "id": "ebdb293ea208018fb44fdc0922bf4e61b67a5085c6063d45b4b76a985af77e27",
+    "title": "Hidden Brain",
+    "author": "Hidden Brain Media",
+    "artwork_url": "https://img.example.com/hiddenbrain/600.jpg",
+    "feed_url": "https://feeds.example.com/hiddenbrain",
+    "genre": "Social Sciences",
+    "itunes_id": 1028908750
+  },
+  "episodes": [
+    {
+      "id": "ea6b90c9b59a0214fb84f43b17dd1f2c8941029fb9b2d783ed1c9365fafc5ff5",
+      "podcast_id": "ebdb293ea208018fb44fdc0922bf4e61b67a5085c6063d45b4b76a985af77e27",
+      "title": "The Science of Second Chances",
+      "published_at": "2026-11-17T08:00:00Z",
+      "duration_s": 3910,
+      "description": "Why some people bounce back after failure, and what research says about starting over.",
+      "artwork_url": "https://img.example.com/hiddenbrain/600.jpg",
+      "has_feed_transcript": false,
+      "status": "new"
+    },
+    {
+      "id": "71d1f6823cee382193f6a78cc894c6849ccbcb412709067428080278af47a407",
+      "podcast_id": "ebdb293ea208018fb44fdc0922bf4e61b67a5085c6063d45b4b76a985af77e27",
+      "title": "Sleep, Memory and the Overnight Brain",
+      "published_at": "2026-11-10T08:00:00Z",
+      "duration_s": 2950,
+      "description": "Fixture episode about how sleep consolidates memory, with tips for better rest.",
+      "artwork_url": "https://img.example.com/hiddenbrain/600.jpg",
+      "has_feed_transcript": true,
+      "status": "new"
+    },
+    {
+      "id": "4278912c2b3fdbd77c1578945771a488720affa31f4f1a43b2a124e92743e2ef",
+      "podcast_id": "ebdb293ea208018fb44fdc0922bf4e61b67a5085c6063d45b4b76a985af77e27",
+      "title": "#212: The Price of Certainty",
+      "published_at": "2026-11-03T08:00:00Z",
+      "duration_s": 3125,
+      "description": "Fixture episode on why we crave certainty and what it costs us.",
+      "artwork_url": "https://img.example.com/hiddenbrain/600.jpg",
+      "has_feed_transcript": false,
+      "status": "new"
+    },
+    {
+      "id": "c8891b1b4f657c437cd69a7fe94e8b133f7b5a3a8903cbda2969d71240375a47",
+      "podcast_id": "ebdb293ea208018fb44fdc0922bf4e61b67a5085c6063d45b4b76a985af77e27",
+      "title": "Rethinking Rest: Part 1",
+      "published_at": "2026-10-27T08:00:00Z",
+      "duration_s": 2600,
+      "description": "Part one of a two-part series on rest.",
+      "artwork_url": "https://img.example.com/hiddenbrain/600.jpg",
+      "has_feed_transcript": false,
+      "status": "new"
+    },
+    {
+      "id": "db78a92b458268f4062863ca623a08ac9f09da4c14e516bd39e1ec51e49a534c",
+      "podcast_id": "ebdb293ea208018fb44fdc0922bf4e61b67a5085c6063d45b4b76a985af77e27",
+      "title": "Rethinking Rest: Part 2",
+      "published_at": "2026-10-20T08:00:00Z",
+      "duration_s": 2610,
+      "description": "Part two of a two-part series on rest.",
+      "artwork_url": "https://img.example.com/hiddenbrain/600.jpg",
+      "has_feed_transcript": false,
+      "status": "new"
+    }
+  ],
+  "total": 5
+}
