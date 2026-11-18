@@ -8,7 +8,25 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+
+# Secrets: every .env variant, but keep the committed examples
 .env
+.env*
+!.env.example
+!**/.env.example
+
+# Local data (never committed)
+*.db
 *.db*
 downloads/
 summaries/
+transcriptions/
+eval_reports/
+
+# Frontend
+node_modules/
+.next/

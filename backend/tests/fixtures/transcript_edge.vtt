@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+NOTE this block is a comment
+and must be ignored
+
+STYLE
+::cue { color: white }
+
+intro-1
+00:01.000 --> 00:04.500 align:start position:10%
+<v.loud Ana Lopez>Welcome to the show,</v> <i>everyone</i>.
+
+00:04.500 --> 00:07.000
+<c.yellow>we have</c> &amp; a <00:00:05.000>guest today.
+
+1:00:00.000 --> 1:00:02.250
+<v Bob>One hour in.
+
+00:00:08.000 --> 00:00:09.000
+Bob: Labelled with a prefix.

@@ -1,0 +1,14 @@
+{
+  "language": "en",
+  "speakers": [
+    {"label": "Ana Lopez", "role": "host"},
+    {"label": "Bob Smith", "role": "guest"}
+  ],
+  "turns": [
+    {"start": "00:00", "speaker": "Bob Smith", "text": "So the cut lands in a pause."},
+    {"start": "00:02", "speaker": "Ana Lopez", "text": "And the timestamps are offset."},
+    {"start": "00:01", "speaker": "Bob Smith", "text": "This one went backwards and gets repaired."},
+    {"start": "99:00", "speaker": "Ana Lopez", "text": "This one is out of range and gets clamped."},
+    {"start": "soon", "speaker": "", "text": "Unparseable start reuses the previous one."}
+  ]
+}

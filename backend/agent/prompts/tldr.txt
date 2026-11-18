@@ -1,0 +1,10 @@
+version: tldr-v1
+
+Task: write a TL;DR of this episode for someone deciding what it is about.
+
+- Give 3 to 5 claims, most important first.
+- Together they should cover the main topic, the key points made and any conclusion.
+- Each claim cites the segments that support it.
+
+Output format: a JSON object with a "claims" list. Each claim has "text" and
+"segment_ids".

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written edge cases (structure modelled on real feeds): missing guid, odd durations,
+     items without audio, duplicate guid, HTML show notes, episode artwork. -->
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>Edge Case FM</title>
+  <link>https://edge.example/</link>
+  <itunes:author>Edge Hosts</itunes:author>
+  <itunes:image href="https://edge.example/cover.jpg"/>
+  <description>A feed full of oddities.</description>
+
+  <item>
+    <title>Hour-long, HH:MM:SS</title>
+    <guid isPermaLink="false">edge-001</guid>
+    <pubDate>Mon, 02 Nov 2026 10:00:00 +0000</pubDate>
+    <itunes:duration>01:02:03</itunes:duration>
+    <itunes:image href="https://edge.example/ep1.jpg"/>
+    <description><![CDATA[<p>Show <b>notes</b> &amp; links</p><ul><li>One</li><li>Two</li></ul>]]></description>
+    <enclosure url="https://cdn.edge.example/ep1.mp3" length="123" type="audio/mpeg"/>
+    <podcast:transcript url="https://edge.example/ep1.srt" type="application/x-subrip"/>
+    <podcast:transcript url="https://edge.example/ep1.vtt" type="text/vtt" language="en" rel="captions"/>
+  </item>
+
+  <item>
+    <title>No guid, MM:SS</title>
+    <pubDate>Sun, 01 Nov 2026 10:00:00 +0000</pubDate>
+    <itunes:duration>45:30</itunes:duration>
+    <description>Plain text.</description>
+    <enclosure url="https://cdn.edge.example/ep2.m4a?src=rss" length="456" type="audio/x-m4a"/>
+  </item>
+
+  <item>
+    <title>No guid, no type, seconds with spaces</title>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 +0000</pubDate>
+    <itunes:duration> 3600 </itunes:duration>
+    <enclosure url="https://cdn.edge.example/ep3.mp3" length="789"/>
+  </item>
+
+  <item>
+    <title>Video only (skipped)</title>
+    <guid>edge-video</guid>
+    <pubDate>Fri, 30 Oct 2026 10:00:00 +0000</pubDate>
+    <enclosure url="https://cdn.edge.example/ep4.mp4" length="1" type="video/mp4"/>
+  </item>
+
+  <item>
+    <title>Blog post without enclosure (skipped)</title>
+    <guid>edge-text</guid>
+    <pubDate>Thu, 29 Oct 2026 10:00:00 +0000</pubDate>
+    <description>No audio here.</description>
+  </item>
+
+  <item>
+    <title>Fractional and garbage durations</title>
+    <guid>edge-006</guid>
+    <pubDate>Wed, 28 Oct 2026 10:00:00 +0000</pubDate>
+    <itunes:duration>unknown</itunes:duration>
+    <enclosure url="https://cdn.edge.example/ep6.mp3" length="1" type="audio/mpeg"/>
+  </item>
+
+  <item>
+    <title>Duplicate of edge-001 (skipped)</title>
+    <guid isPermaLink="false">edge-001</guid>
+    <pubDate>Tue, 27 Oct 2026 10:00:00 +0000</pubDate>
+    <enclosure url="https://cdn.edge.example/ep1-dup.mp3" length="1" type="audio/mpeg"/>
+  </item>
+
+  <item>
+    <title>Undated episode</title>
+    <guid>edge-008</guid>
+    <itunes:duration>1:05</itunes:duration>
+    <enclosure url="https://cdn.edge.example/ep8.mp3" length="1" type="audio/mpeg"/>
+  </item>
+</channel>
+</rss>

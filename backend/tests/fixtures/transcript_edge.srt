@@ -1,0 +1,16 @@
+1
+00:00:01,000 --> 00:00:03,000
+Host: Hello and welcome
+to the show.
+
+2
+00:00:03,000 --> 00:00:05,500
+Today we talk about tests.
+
+3
+00:00:05,500 --> 00:00:08,000
+Guest Name: Thanks for having me.
+
+4
+00:00:08,000 --> 00:00:09,000
+At 10:30 we started.

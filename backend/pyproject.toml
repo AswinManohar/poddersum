@@ -1,0 +1,62 @@
+[project]
+name = "poddersum-backend"
+version = "0.1.0"
+description = "PodderSum API, ingest and agent backend"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic>=2",
+    "pydantic-settings>=2",
+    "sqlalchemy[asyncio]>=2",
+    "asyncpg",
+    "psycopg[binary,pool]",
+    "alembic",
+    "httpx",
+    "feedparser",
+    "pyyaml",
+    "litellm",
+    "langsmith",
+    "langgraph",
+    "langgraph-checkpoint-postgres",
+    "sse-starlette",
+    "imageio-ffmpeg",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "respx",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = [
+    "db: requires the local docker Postgres (skipped if unreachable)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "ASYNC", "SIM", "TID251"]
+
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+# `import litellm` before llm/__init__ sets LITELLM_MODE=PRODUCTION runs dotenv.load_dotenv(),
+# exporting the repo .env into os.environ. Go through `llm` (tests: llm.fake.provider_errors).
+"litellm".msg = "import litellm only inside backend/llm/ (use the llm gateway / llm.fake)"
+
+[tool.ruff.lint.per-file-ignores]
+"llm/**" = ["TID251"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["api", "core", "db", "discovery", "ingest", "agent", "llm"]

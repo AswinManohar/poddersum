@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="https://rss.buzzsprout.com/styles.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:psc="http://podlove.org/simple-chapters" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <atom:link href="https://rss.buzzsprout.com/231452.rss" rel="self" type="application/rss+xml" />
+  <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" xmlns="http://www.w3.org/2005/Atom" />
+  <title>Buzzcast</title>
+
+  <lastBuildDate>Fri, 06 Nov 2026 12:10:23 -0500</lastBuildDate>
+  <link>https://buzzcast.buzzsprout.com/</link>
+  <language>en-us</language>
+  <copyright>© 2026 Buzzsprout</copyright>
+  <podcast:locked>yes</podcast:locked>
+    <podcast:guid>29cdca4a-32d8-56ba-b48b-09a011c5daa9</podcast:guid>
+<itunes:author>Buzzsprout</itunes:author>
+  <itunes:type>episodic</itunes:type>
+  <itunes:explicit>false</itunes:explicit>
+  <description><![CDATA[<p>Buzzcast helps podcasters stay informed, inspired, and excited to keep podcasting.<br><br>Each week, Jordan, Kevin, and Alban break down the podcasting news, trends, tools, and creator debates that actually matter. We share what we’re seeing at Buzzsprout, what we’re testing ourselves, and what podcasters should pay attention to without chasing every new thing.<br><br>The goal is to help you keep podcasting without burning out. Expect honest opinions, practical takeaways, occasional rabbit trails, and a reminder that podcasting should be fun!</p>]]></description>
+  <generator>Buzzsprout (https://www.buzzsprout.com)</generator>
+  <itunes:keywords>podcasting, how to podcast, podcast strategies, podcast tutorial</itunes:keywords>
+  <itunes:owner>
+    <itunes:name>Buzzsprout</itunes:name>
+  </itunes:owner>
+  <image>
+     <url>https://storage.buzzsprout.com/r8lrzwe62jw11ti3yzms9wnvy4jb?.jpg</url>
+     <title>Buzzcast</title>
+     <link>https://buzzcast.buzzsprout.com/</link>
+  </image>
+  <itunes:image href="https://storage.buzzsprout.com/r8lrzwe62jw11ti3yzms9wnvy4jb?.jpg" />
+  <itunes:category text="News">
+    <itunes:category text="Tech News" />
+  </itunes:category>
+  <itunes:category text="Technology" />
+  <itunes:category text="Business">
+    <itunes:category text="Marketing" />
+  </itunes:category>
+  <podcast:person role="host" href="https://twitter.com/albanbrooke" img="https://storage.buzzsprout.com/u74fhxi1dftpajwx0t4kfebsgw5e">Alban Brooke</podcast:person>
+  <podcast:person role="host" href="https://twitter.com/JordanPods" img="https://storage.buzzsprout.com/nogzlp48m9zqmg2szsh5e8g7khfy">Jordan Blair</podcast:person>
+  <podcast:person role="host" href="https://twitter.com/kfinn" img="https://storage.buzzsprout.com/78wda3dz42dmegt8m8g31hcpm671">Kevin Finn</podcast:person>
+  <item>
+    <itunes:title>Can AI Find Your Podcast? A Real-World AEO Test</itunes:title>
+    <title>Can AI Find Your Podcast? A Real-World AEO Test</title>
+    <itunes:summary><![CDATA[ Can AI find your podcast? We’re digging into answer engine optimization (AEO), how it overlaps with podcast SEO, and whether making a few changes to an episode can help it show up in AI recommendations. Jordan put it to the test with a Happy to Help episode that wasn’t appearing in her searches. After updating the title, description, transcript, and chapters, she tried again and the results surprised us! Sure, one experiment isn’t a magic formula, but it gives us some practical ideas to try ...]]></itunes:summary>
+    <description><![CDATA[<p><a target="_blank" href="https://www.buzzsprout.com/231452/fan_mail/new"></a></p><p>Can AI find your podcast? We’re digging into answer engine optimization (AEO), how it overlaps with podcast SEO, and whether making a few changes to an episode can help it show up in AI recommendations.</p><p>Jordan put it to the test with a Happy to Help episode that wasn’t appearing in her searches. After updating the title, description, transcript, and chapters, she tried again and the results surprised us! Sure, one experiment isn’t a magic formula, but it gives us some practical ideas to try improving discovery without re-recording anything.</p><p><b>We cover how to:</b></p><ul><li>Test your podcast using questions a potential listener would actually ask.</li><li>Make episode titles and chapter names more specific.</li><li>Use the “bite, snack, meal” approach to make information more digestible.</li><li>Clean up transcript errors and make it clear who’s speaking.</li><li>Help people find the full episode when they discover a clip.</li></ul><p>Plus, we talk about <a href='https://apptopia.com/ios/app/6757624420/about'>Dial Flipper</a>, a podcast discovery app that feels like flipping through radio stations, explain why your listener location stats might look off, and discuss whether podcast app ads are worth the money.</p><p>Try this with one of your episodes and send us Fan Mail with what you find. We’re curious to see whether your results surprise you, too!</p><p><b>Contact Buzzcast</b></p><ul><li><a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Send us Fan Mail</a></li><li>Tweet us at <a href='https://twitter.com/BuzzcastPodcast'>@buzzcastpodcast</a>, <a href='https://twitter.com/albanbrooke'>@albanbrooke</a>, <a href='https://twitter.com/kfinn'>@kfinn</a>, and <a href='https://twitter.com/JordanPods'>@JordanPods</a></li></ul><p><b><em>Thanks for listening and Keep Podcasting!</em></b></p>]]></description>
+    <content:encoded><![CDATA[<p><a target="_blank" href="https://www.buzzsprout.com/231452/fan_mail/new"></a></p><p>Can AI find your podcast? We’re digging into answer engine optimization (AEO), how it overlaps with podcast SEO, and whether making a few changes to an episode can help it show up in AI recommendations.</p><p>Jordan put it to the test with a Happy to Help episode that wasn’t appearing in her searches. After updating the title, description, transcript, and chapters, she tried again and the results surprised us! Sure, one experiment isn’t a magic formula, but it gives us some practical ideas to try improving discovery without re-recording anything.</p><p><b>We cover how to:</b></p><ul><li>Test your podcast using questions a potential listener would actually ask.</li><li>Make episode titles and chapter names more specific.</li><li>Use the “bite, snack, meal” approach to make information more digestible.</li><li>Clean up transcript errors and make it clear who’s speaking.</li><li>Help people find the full episode when they discover a clip.</li></ul><p>Plus, we talk about <a href='https://apptopia.com/ios/app/6757624420/about'>Dial Flipper</a>, a podcast discovery app that feels like flipping through radio stations, explain why your listener location stats might look off, and discuss whether podcast app ads are worth the money.</p><p>Try this with one of your episodes and send us Fan Mail with what you find. We’re curious to see whether your results surprise you, too!</p><p><b>Contact Buzzcast</b></p><ul><li><a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Send us Fan Mail</a></li><li>Tweet us at <a href='https://twitter.com/BuzzcastPodcast'>@buzzcastpodcast</a>, <a href='https://twitter.com/albanbrooke'>@albanbrooke</a>, <a href='https://twitter.com/kfinn'>@kfinn</a>, and <a href='https://twitter.com/JordanPods'>@JordanPods</a></li></ul><p><b><em>Thanks for listening and Keep Podcasting!</em></b></p>]]></content:encoded>
+    <enclosure url="https://op3.dev/e/https://dts.podtrac.com/redirect.mp3/www.buzzsprout.com/231452/episodes/20079447-can-ai-find-your-podcast-a-real-world-aeo-test.mp3" length="46289115" type="audio/mpeg" />
+    <podcast:image href="https://storage.buzzsprout.com/ild2d87mqtpbiedmapwh3ysmuuy2" purpose="poster" aspect-ratio="16/9" width="1920" height="1080" />
+    <podcast:alternateEnclosure type="application/vnd.apple.mpegurl" length="0">
+      <podcast:source uri="https://www.buzzsprout.com/231452/episodes/20079447.m3u8" />
+    </podcast:alternateEnclosure>
+    <itunes:author>Buzzsprout</itunes:author>
+    <guid isPermaLink="false">Buzzsprout-20079447</guid>
+    <pubDate>Fri, 06 Nov 2026 08:00:00 -0500</pubDate>
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20079447/transcript" type="text/html" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20079447/transcript.json" type="application/json" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20079447/transcript.srt" type="application/x-subrip" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20079447/transcript.vtt" type="text/vtt" />
+    <podcast:chapters url="https://www.buzzsprout.com/231452/20079447/chapters.json" type="application/json" />
+    <psc:chapters>
+  <psc:chapter start="0:00" title="Podcast Discovery Meets the Radio Dial" />
+  <psc:chapter start="14:43" title="What Is AEO? Is It Just Marketing Hype?" />
+  <psc:chapter start="17:33" title="How AEO and Podcast SEO Overlap" />
+  <psc:chapter start="23:20" title="Testing Whether AI Recommends Your Podcast" />
+  <psc:chapter start="28:37" title="Fixing Transcripts, Chapters, And Descriptions" />
+  <psc:chapter start="36:18" title="Writing Clear Episode Titles and Descriptions" />
+  <psc:chapter start="40:35" title="Identifying Hosts and Guests in Show Notes and Clips" />
+  <psc:chapter start="42:34" title="Our AI Search Results After Updating One Episode" />
+  <psc:chapter start="45:54" title="Updating Your Podcast Catalog With AI Tools" />
+  <psc:chapter start="49:07" title="Could the Podcast Starter Kit Help You Rebrand?" />
+  <psc:chapter start="50:34" title="Why Podcast Listener Location Stats Can Look Wrong" />
+  <psc:chapter start="54:37" title="Podcast App Ads vs. Social Media Advertising" />
+  <psc:chapter start="59:34" title="Post Show: Ghost Tours" />
+</psc:chapters>
+    <itunes:duration>3853</itunes:duration>
+    <itunes:keywords></itunes:keywords>
+    <itunes:episode>253</itunes:episode>
+    <itunes:episodeType>full</itunes:episodeType>
+    <itunes:explicit>false</itunes:explicit>
+  </item>
+<item>
+    <itunes:title>Your Podcast Idea Doesn’t Have To Be Perfect To Get Started</itunes:title>
+    <title>Your Podcast Idea Doesn’t Have To Be Perfect To Get Started</title>
+    <itunes:summary><![CDATA[ Have a podcast idea you keep putting off because you haven’t found the perfect name or figured out the artwork? We talk about getting past those first hurdles with Buzzsprout’s new Podcast Starter Kit, which turns a few answers about your idea into name suggestions, a description, cover art, and categories. Try the Starter Kit and send us Fan Mail with what you come up with. We want to hear about your next podcast! Contact Buzzcast Send us Fan MailTweet us at @buzzcastpodcast, @albanbrooke, ...]]></itunes:summary>
+    <description><![CDATA[<p><a target="_blank" href="https://www.buzzsprout.com/231452/fan_mail/new"></a></p><p>Have a podcast idea you keep putting off because you haven’t found the perfect name or figured out the artwork? We talk about getting past those first hurdles with Buzzsprout’s new <a href='https://www.buzzsprout.com/help/257-podcast-starter-kit'>Podcast Starter Kit</a>, which turns a few answers about your idea into name suggestions, a description, cover art, and categories.</p><p>Try the Starter Kit and send us <a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Fan Mail</a> with what you come up with. We want to hear about your next podcast!</p><p><b>Contact Buzzcast</b></p><ul><li><a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Send us Fan Mail</a></li><li>Tweet us at <a href='https://twitter.com/BuzzcastPodcast'>@buzzcastpodcast</a>, <a href='https://twitter.com/albanbrooke'>@albanbrooke</a>, <a href='https://twitter.com/kfinn'>@kfinn</a>, and <a href='https://twitter.com/JordanPods'>@JordanPods</a></li></ul><p><b><em>Thanks for listening and Keep Podcasting!</em></b></p>]]></description>
+    <content:encoded><![CDATA[<p><a target="_blank" href="https://www.buzzsprout.com/231452/fan_mail/new"></a></p><p>Have a podcast idea you keep putting off because you haven’t found the perfect name or figured out the artwork? We talk about getting past those first hurdles with Buzzsprout’s new <a href='https://www.buzzsprout.com/help/257-podcast-starter-kit'>Podcast Starter Kit</a>, which turns a few answers about your idea into name suggestions, a description, cover art, and categories.</p><p>Try the Starter Kit and send us <a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Fan Mail</a> with what you come up with. We want to hear about your next podcast!</p><p><b>Contact Buzzcast</b></p><ul><li><a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Send us Fan Mail</a></li><li>Tweet us at <a href='https://twitter.com/BuzzcastPodcast'>@buzzcastpodcast</a>, <a href='https://twitter.com/albanbrooke'>@albanbrooke</a>, <a href='https://twitter.com/kfinn'>@kfinn</a>, and <a href='https://twitter.com/JordanPods'>@JordanPods</a></li></ul><p><b><em>Thanks for listening and Keep Podcasting!</em></b></p>]]></content:encoded>
+    <enclosure url="https://op3.dev/e/https://dts.podtrac.com/redirect.mp3/www.buzzsprout.com/231452/episodes/20042854-your-podcast-idea-doesn-t-have-to-be-perfect-to-get-started.mp3" length="9072257" type="audio/mpeg" />
+    <podcast:image href="https://storage.buzzsprout.com/ased6sz89gwc49j7pq5tje540khi" purpose="poster" aspect-ratio="16/9" width="1920" height="1080" />
+    <podcast:alternateEnclosure type="application/vnd.apple.mpegurl" length="0">
+      <podcast:source uri="https://www.buzzsprout.com/231452/episodes/20042854.m3u8" />
+    </podcast:alternateEnclosure>
+    <itunes:author>Buzzsprout</itunes:author>
+    <guid isPermaLink="false">Buzzsprout-20042854</guid>
+    <pubDate>Fri, 30 Oct 2026 08:00:00 -0400</pubDate>
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20042854/transcript" type="text/html" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20042854/transcript.json" type="application/json" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20042854/transcript.srt" type="application/x-subrip" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20042854/transcript.vtt" type="text/vtt" />
+    <itunes:duration>751</itunes:duration>
+    <itunes:keywords></itunes:keywords>
+    <itunes:episode>252</itunes:episode>
+    <itunes:episodeType>full</itunes:episodeType>
+    <itunes:explicit>false</itunes:explicit>
+  </item>
+<item>
+    <itunes:title>Why Your Podcast Stats Don&#39;t Add Up (And What Metrics Actually Matter)</itunes:title>
+    <title>Why Your Podcast Stats Don&#39;t Add Up (And What Metrics Actually Matter)</title>
+    <itunes:summary><![CDATA[ This week, we’re sorting through the mess of podcast metrics across YouTube, Spotify, and Apple Podcasts to figure out what those numbers actually tell you about your audience. We discuss why combining stats from different platforms can be misleading, how Buzzsprout counts video downloads, and why a video play doesn’t necessarily mean someone is watching. Plus, we share where to look for more useful feedback, from listener retention graphs to messages from actual humans. Also in this episode...]]></itunes:summary>
+    <description><![CDATA[<p><a target="_blank" href="https://www.buzzsprout.com/231452/fan_mail/new"></a></p><p>This week, we’re sorting through the mess of podcast metrics across YouTube, Spotify, and Apple Podcasts to figure out what those numbers actually tell you about your audience.</p><p>We discuss why combining stats from different platforms can be misleading, how Buzzsprout counts video downloads, and why a video play doesn’t necessarily mean someone is watching. Plus, we share where to look for more useful feedback, from listener retention graphs to messages from actual humans.</p><p>Also in this episode:<br/>• Buzzsprout’s new mobile soundbites with editable captions and customizable achievement sharing<br/>• How to find the hidden Buzzsprout logo Easter egg<br/>• Listener tips for finding podcast guests and a father-daughter <a href='https://justonemorething.buzzsprout.com/'>Columbo podcast</a> that made our day</p><p><b>Contact Buzzcast</b></p><ul><li><a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Send us Fan Mail</a></li><li>Tweet us at <a href='https://twitter.com/BuzzcastPodcast'>@buzzcastpodcast</a>, <a href='https://twitter.com/albanbrooke'>@albanbrooke</a>, <a href='https://twitter.com/kfinn'>@kfinn</a>, and <a href='https://twitter.com/JordanPods'>@JordanPods</a></li></ul><p><b><em>Thanks for listening and Keep Podcasting!</em></b></p>]]></description>
+    <content:encoded><![CDATA[<p><a target="_blank" href="https://www.buzzsprout.com/231452/fan_mail/new"></a></p><p>This week, we’re sorting through the mess of podcast metrics across YouTube, Spotify, and Apple Podcasts to figure out what those numbers actually tell you about your audience.</p><p>We discuss why combining stats from different platforms can be misleading, how Buzzsprout counts video downloads, and why a video play doesn’t necessarily mean someone is watching. Plus, we share where to look for more useful feedback, from listener retention graphs to messages from actual humans.</p><p>Also in this episode:<br/>• Buzzsprout’s new mobile soundbites with editable captions and customizable achievement sharing<br/>• How to find the hidden Buzzsprout logo Easter egg<br/>• Listener tips for finding podcast guests and a father-daughter <a href='https://justonemorething.buzzsprout.com/'>Columbo podcast</a> that made our day</p><p><b>Contact Buzzcast</b></p><ul><li><a href='https://www.buzzsprout.com/twilio/text_messages/231452/open_sms'>Send us Fan Mail</a></li><li>Tweet us at <a href='https://twitter.com/BuzzcastPodcast'>@buzzcastpodcast</a>, <a href='https://twitter.com/albanbrooke'>@albanbrooke</a>, <a href='https://twitter.com/kfinn'>@kfinn</a>, and <a href='https://twitter.com/JordanPods'>@JordanPods</a></li></ul><p><b><em>Thanks for listening and Keep Podcasting!</em></b></p>]]></content:encoded>
+    <enclosure url="https://op3.dev/e/https://dts.podtrac.com/redirect.mp3/www.buzzsprout.com/231452/episodes/20004945-why-your-podcast-stats-don-t-add-up-and-what-metrics-actually-matter.mp3" length="48210350" type="audio/mpeg" />
+    <podcast:image href="https://storage.buzzsprout.com/tmivke36exbo7ts5dxyaa9dckbqz" purpose="poster" aspect-ratio="16/9" width="1920" height="1080" />
+    <podcast:alternateEnclosure type="application/vnd.apple.mpegurl" length="0">
+      <podcast:source uri="https://www.buzzsprout.com/231452/episodes/20004945.m3u8" />
+    </podcast:alternateEnclosure>
+    <itunes:author>Buzzsprout</itunes:author>
+    <guid isPermaLink="false">Buzzsprout-20004945</guid>
+    <pubDate>Fri, 23 Oct 2026 08:00:00 -0400</pubDate>
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20004945/transcript" type="text/html" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20004945/transcript.json" type="application/json" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20004945/transcript.srt" type="application/x-subrip" />
+    <podcast:transcript url="https://www.buzzsprout.com/231452/20004945/transcript.vtt" type="text/vtt" />
+    <podcast:chapters url="https://www.buzzsprout.com/231452/20004945/chapters.json" type="application/json" />
+    <psc:chapters>
+  <psc:chapter start="0:00" title="Unlikely Saboteur" />
+  <psc:chapter start="3:36" title="Create Captioned Soundbites On Your Phone!" />
+  <psc:chapter start="6:22" title="Achievement Sharing With Share Studio" />
+  <psc:chapter start="11:38" title="The Buzzsprout Logo Easter Egg" />
+  <psc:chapter start="15:18" title="Why Podcast Metrics Feel Broken" />
+  <psc:chapter start="19:09" title="YouTube Views Versus Engaged Views" />
+  <psc:chapter start="24:23" title="Stop Combining Cross Platform Numbers" />
+  <psc:chapter start="31:08" title="Spotify Plays And Incentives" />
+  <psc:chapter start="40:17" title="Apple HLS Video Download Logic" />
+  <psc:chapter start="46:32" title="Focus On People Not Dashboards" />
+  <psc:chapter start="51:51" title="Fan Mail " />
+  <psc:chapter start="57:48" title="Post Show: Not-So-Timeless Tickets" />
+</psc:chapters>
+    <itunes:duration>4013</itunes:duration>
+    <itunes:keywords></itunes:keywords>
+    <itunes:episode>251</itunes:episode>
+    <itunes:episodeType>full</itunes:episodeType>
+    <itunes:explicit>false</itunes:explicit>
+  </item>
+</channel>
+</rss>

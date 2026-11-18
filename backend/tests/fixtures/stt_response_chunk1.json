@@ -1,0 +1,12 @@
+{
+  "language": "en",
+  "speakers": [
+    {"label": "Ana Lopez", "role": "host"},
+    {"label": "Bob Smith", "role": "guest"}
+  ],
+  "turns": [
+    {"start": "00:00", "speaker": "Ana Lopez", "text": "Welcome to Test Pod. I'm Ana Lopez, and today my guest is Bob Smith."},
+    {"start": "00:01", "speaker": "Bob Smith", "text": "Thanks Ana, great to be here."},
+    {"start": "00:02", "speaker": "Ana Lopez", "text": "Let's talk about silence detection."}
+  ]
+}

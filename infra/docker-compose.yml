@@ -1,0 +1,28 @@
+# Local development infrastructure for PodderSum.
+#   docker compose -f infra/docker-compose.yml up -d
+# Postgres (with pgvector, so Phase 2 needs no image change) is exposed on host port 5433
+# because 5432 is commonly taken. Credentials are local-only dev values.
+name: poddersum
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: poddersum-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: poddersum
+      POSTGRES_USER: poddersum
+      POSTGRES_PASSWORD: poddersum
+    ports:
+      - "5433:5432"
+    volumes:
+      - poddersum-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U poddersum -d poddersum"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  poddersum-pgdata:

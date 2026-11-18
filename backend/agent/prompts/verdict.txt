@@ -1,0 +1,16 @@
+version: verdict-v1
+
+Task: help a listener decide whether this episode is worth their time.
+
+Write claims in three sections, each claim marked with its "section":
+- "who_its_for": 1 to 2 claims on who will get the most out of this episode and why.
+- "whats_new": 1 to 3 claims on what is new, surprising or uncommon in it, compared with
+  what most people already know about the topic.
+- "best_10_minutes": exactly 1 claim naming the best stretch of about 10 minutes to
+  listen to if they only have 10 minutes, and what they will get from it. Cite exactly
+  two segments: the one where the stretch starts and the one where it ends.
+
+Every claim cites the segments that support it.
+
+Output format: a JSON object with a "claims" list. Each claim has "section", "text" and
+"segment_ids".

@@ -1,0 +1,22 @@
+version: ask-v1
+
+Task: answer the question below from this episode.
+
+<question>
+$question
+</question>
+
+How to answer:
+- Follow the angle of the question. If it asks for a point of view ("for a startup
+  founder", "as a parent"), pick and phrase the claims for that reader. If it limits the
+  scope ("only the parts about pricing"), include only claims within that scope.
+- Put the most important claims first. Use as many claims as the question needs, usually
+  3 to 8.
+- If the episode does not cover what is asked, make your first claim say so plainly (for
+  example "The episode does not discuss pricing."), citing the segments that come
+  closest, then add claims only for what the episode does say that is related.
+- If nothing in the episode is even related, output nothing at all.
+
+Output format: one JSON object per line and nothing else (no list brackets, no code
+fences, no commentary). Each line looks like this:
+{"text": "<one claim>", "segment_ids": [<id>, <id>]}

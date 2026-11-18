@@ -1,0 +1,57 @@
+# PodderSum model registry. The ONLY place model ids and prices live.
+# Code asks for a task key (summary, chat, stt_cheap, ...); never a model id.
+#
+# tasks.<key>:
+#   model:      alias defined under `models:`
+#   params:     default LiteLLM completion params (callers may override per call)
+#   timeout_s:  per-attempt request timeout
+#   max_retries: retries on 429 / 5xx / connection errors (attempts = 1 + max_retries)
+#
+# models.<alias>:
+#   litellm_model: LiteLLM model string, "<provider>/<model id>"
+#   provider:      key into the gateway's provider -> API key map (gemini -> GEMINI_API_KEY)
+#   prices_per_1m_usd: standard paid-tier prices per 1M tokens (output includes thinking tokens)
+
+tasks:
+  summary:
+    model: flash_lite
+    params:
+      max_tokens: 8192
+      reasoning_effort: low # Gemini 3.x thinking level; temperature left at the Gemini 3 default (1.0)
+    timeout_s: 120
+    max_retries: 2
+  chat:
+    model: flash_lite
+    params:
+      max_tokens: 4096
+      reasoning_effort: low
+    timeout_s: 120
+    max_retries: 2
+  stt_cheap:
+    model: flash_lite
+    params:
+      max_tokens: 65536
+      reasoning_effort: low
+    timeout_s: 600
+    max_retries: 2
+  # Reserved by the implementation plan; defined in later slices.
+  # extraction:    { model: ..., params: {...} }
+  # embedding:     { model: ..., params: {...} }
+  # cross_episode: { model: ..., params: {...} }
+  # judge:         { model: ..., params: {...} }
+  # rerank:        { model: ..., params: {...} }
+
+models:
+  flash_lite:
+    # PROVISIONAL: from public docs 2026-11-12; not yet confirmed against the models list API (key invalid)
+    # Confirm with: cd backend && uv run python -m llm.smoke --list-models
+    litellm_model: gemini/gemini-3.1-flash-lite
+    provider: gemini
+    context_window: 1048576
+    max_output_tokens: 65536
+    prices_per_1m_usd:
+      input_text: 0.25 # text / image / video
+      input_audio: 0.50
+      output: 1.50 # includes thinking tokens
+      cached_input_text: 0.025
+      cached_input_audio: 0.05

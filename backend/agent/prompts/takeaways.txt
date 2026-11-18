@@ -1,0 +1,12 @@
+version: takeaways-v1
+
+Task: list the key takeaways of this episode.
+
+- Give 5 to 8 takeaways, most useful first.
+- Each takeaway is concrete: a specific idea, number, recommendation, example or
+  argument from the episode that a listener could remember or act on. Avoid general
+  statements like "they discussed many topics".
+- Each takeaway cites the segments where it is said.
+
+Output format: a JSON object with a "claims" list. Each claim has "text" and
+"segment_ids".
