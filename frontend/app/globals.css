@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* Design tokens. Light is the default; dark follows the OS setting. */
+:root {
+  --bg: #f7f4ee;
+  --surface: #fffdf9;
+  --surface-muted: #efeae0;
+  --ink: #1d1b18;
+  --ink-muted: #5c564c;
+  --line: #ddd5c7;
+  --accent: #b4432a;
+  --accent-ink: #ffffff;
+  --accent-soft: #f6e2da;
+  --ok: #2f6b45;
+  --ok-soft: #dcebdf;
+  --warn: #8a5a00;
+  --warn-soft: #f5e8c8;
+  --danger: #a1262a;
+  --danger-soft: #f7dcdc;
+  --focus: #1f5fbf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15140f;
+    --surface: #1e1c17;
+    --surface-muted: #29261f;
+    --ink: #f1ece2;
+    --ink-muted: #b5ad9e;
+    --line: #3a362d;
+    --accent: #ef8a6d;
+    --accent-ink: #1d1208;
+    --accent-soft: #3d2219;
+    --ok: #8fd0a4;
+    --ok-soft: #1f3326;
+    --warn: #f0c46a;
+    --warn-soft: #3a2f14;
+    --danger: #f19a9a;
+    --danger-soft: #3d1c1c;
+    --focus: #8ab4ff;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-focus: var(--focus);
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), ui-serif, Georgia, serif;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* One visible focus style for every interactive element. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
