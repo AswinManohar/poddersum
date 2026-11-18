@@ -4,6 +4,44 @@ poddersum is an agentic podcast summarizer built with **LangGraph** for an agent
 
 ---
 
+## Quickstart: the new web app (Milestone 0 prototype)
+
+The new app lives in `backend/` (FastAPI) and `frontend/` (Next.js). Search any public podcast,
+open an episode, and get presets, ask-anything answers and chat, where every claim links to a
+timestamp in the audio. The legacy Streamlit guide below still describes the old app.
+
+**Needs:** Docker, [uv](https://docs.astral.sh/uv/), Node 20+ with npm (not pnpm).
+
+```bash
+# 1. Secrets: copy the examples and fill in GEMINI_API_KEY (and LANGSMITH_* for tracing)
+cp .env.example .env
+cp frontend/.env.example frontend/.env.local
+
+# 2. Local Postgres (pgvector) on host port 5433
+docker compose -f infra/docker-compose.yml up -d
+
+# 3. Backend API on port 8010
+uv python install 3.12
+cd backend
+uv sync
+uv run alembic upgrade head
+uv run python -m llm.smoke "hello"      # optional: checks the Gemini key, prints tokens and cost
+uv run uvicorn api.main:app --reload --port 8010
+
+# 4. Web app on port 3000 (in a second terminal)
+cd frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:3000, search a show (for example "Buzzcast"), open an episode, and
+the page starts processing it. Episodes that publish a transcript in their feed are ready in
+about a second. Others are transcribed once with Gemini, and the result is stored and reused.
+
+**Tests:** `cd backend && uv run pytest`; `cd frontend && npm run lint && npm run typecheck && npm test && npm run e2e`.
+
+---
+
 # 🎙️ Beginner's Guide (Linux & Mac)
 
 Follow these steps to set up your own personal AI podcast assistant.
